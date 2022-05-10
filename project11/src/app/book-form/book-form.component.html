@@ -1,0 +1,96 @@
+<div>
+    <form [formGroup]="bookForm">
+      <fieldset>
+        <div class="form-group">
+          <label for="name">Book Name</label>
+          <input
+            type="text"
+            id="name"
+            [value]="book.name"
+            formControlName="name"
+            class="form-control"
+          />
+          <div class="help-block" *ngIf="name.touched">
+            <span *ngIf="name.errors?.required">Book Name is Required</span>
+            <span *ngIf="name.errors?.minlength"
+              >Book Name must be least 3 char</span
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input
+            type="text"
+            id="price"
+            [value]="book.price"
+            formControlName="price"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="author">Book Author</label>
+          <input
+            type="text"
+            id="author"
+            [value]="book.author"
+            formControlName="author"
+            class="form-control"
+          />
+          <div class="help-block" *ngIf="author.touched">
+            <span *ngIf="author.errors?.required">Book author is Required</span>
+            <span *ngIf="author.errors?.minlength"
+              >Book author must be least 3 char</span
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="canBuy">Book CanBuy</label>
+          <input
+            type="text"
+            id="canBuy"
+            [value]="book.canBuy"
+            formControlName="canBuy"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            id="description"
+            [value]="book.description"
+            formControlName="description"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="publishdate">Publishdate</label>
+          <input
+            type="text"
+            id="publishdate"
+            [value]="book.publishdate"
+            formControlName="publishdate"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="discount">Discount</label>
+          <input
+            type="text"
+            id="discount"
+            [value]="book.discount"
+            formControlName="discount"
+            class="form-control"
+          />
+        </div>
+        <div>
+          <button
+            class="btn btn-primary"
+            (click)="onAddButtonClick(bookForm.value)"
+          >
+            Add New Book
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
